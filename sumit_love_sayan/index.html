@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Shnehaa❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══ INTRO: YES / NO ══ -->
+<div id="intro">
+  <p class="intro-text">I made something special for u 💌<br>do u wanna see it?</p>
+  <img src="image/giphy.gif" alt="cat" class="intro-img">
+  <div class="intro-btns">
+    <button id="yesBtn">YES</button>
+    <button id="noBtn">NO</button>
+  </div>
+</div>
+
+<canvas id="particles"></canvas>
+<canvas id="confetti-canvas"></canvas>
+
+<audio id="section-audio" preload="auto"></audio>
+
+<!-- Navigation dots -->
+<div id="nav">
+  <div class="nav-dot active" onclick="goTo(0)"></div>
+  <div class="nav-dot" onclick="goTo(1)"></div>
+  <div class="nav-dot" onclick="goTo(2)"></div>
+  <div class="nav-dot" onclick="goTo(3)"></div>
+  <div class="nav-dot" onclick="goTo(4)"></div>
+  <div class="nav-dot" onclick="goTo(5)"></div>
+</div>
+
+<!-- Audio toggle -->
+<div id="audio-btn" onclick="toggleAudio()" title="Toggle music">🎵</div>
+
+<!-- ══ SECTION 1: WELCOME ══ -->
+<section class="section" id="welcome">
+  <div class="glow-ring ring1"></div>
+  <div class="glow-ring ring2"></div>
+  <div class="glow-ring ring3"></div>
+  <div class="welcome-content">
+    <p class="welcome-subtitle">A Special Day</p>
+    <h1 class="welcome-title">Happy Birthday<br> rest half</h1>
+    <span class="welcome-heart">❤️</span>
+    <p class="welcome-tagline">You make every day feel like magic</p>
+    <button class="enter-btn" onclick="goTo(1)"> Enter Your Surprise </button>
+  </div>
+</section>
+
+<!-- ══ SECTION 2: PHOTOS ══ -->
+<section class="section" id="photos">
+  <p class="welcome-subtitle" style="position:relative;z-index:2;margin-bottom:20px">Your Beautiful Memories</p>
+  
+  <div class="photo-frame">
+    <div class="slide active" id="slide-0">
+      <img src="image/20260610_164942.jpg.jpeg" alt="Memory 1">
+    </div>
+    <div class="slide" id="slide-1">
+      <img src="image/IMG-20260822-WA0004.jpg.jpeg" alt="Memory 2">
+    </div>
+    <div class="slide" id="slide-2">
+      <img src="image/IMG_20261027_000618.jpg.jpeg" alt="Memory 3">
+    </div>
+    <div class="slide" id="slide-3">
+      <img src="image/IMG-20260822-WA0004.jpg.jpeg" alt="Memory 4">
+    </div>
+  </div>
+
+  <div class="slide-dots">
+    <div class="dot active" onclick="setSlide(0)"></div>
+    <div class="dot" onclick="setSlide(1)"></div>
+    <div class="dot" onclick="setSlide(2)"></div>
+    <div class="dot" onclick="setSlide(3)"></div>
+  </div>
+  
+  <p class="photo-upload-hint">Her beautiful memories ✦</p>
+
+  <p class="photo-caption" style="margin-top:20px">"Every moment with you is my favorite memory."</p>
+
+  <div class="next-btn" onclick="goTo(2)">
+    <span>Continue</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: MESSAGE ══ -->
+<section class="section" id="message">
+  <div class="message-container">
+    <p class="message-label">✦ From My Heart ✦</p>
+    <div id="typewriter-text"><span class="cursor-blink"></span></div>
+  </div>
+  <div class="next-btn" onclick="goTo(3)" id="msg-next" style="display:none">
+    <span>Continue</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: CAKE ══ -->
+<section class="section" id="cake-section">
+  <div class="cake-wrapper">
+    <h2 class="cake-title">Make a Wish 🎂</h2>
+
+    <svg id="cake-svg" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+      <!-- plate shadow -->
+      <ellipse cx="160" cy="295" rx="110" ry="12" fill="rgba(0,0,0,0.25)"/>
+
+      <!-- bottom tier -->
+      <rect x="60" y="220" width="200" height="65" rx="10" fill="#e8729a"/>
+      <rect x="60" y="220" width="200" height="20" rx="5" fill="#f4a0b5"/>
+      <!-- frosting drips bottom -->
+      <path d="M70,220 Q80,208 90,220 Q100,208 110,220 Q120,208 130,220 Q140,208 150,220 Q160,208 170,220 Q180,208 190,220 Q200,208 210,220 Q220,208 230,220 Q240,208 250,220" fill="none" stroke="#fce4ec" stroke-width="8" stroke-linecap="round"/>
+      <!-- decorations bottom -->
+      <circle cx="100" cy="250" r="6" fill="#f0c060"/>
+      <circle cx="160" cy="255" r="6" fill="#f0c060"/>
+      <circle cx="220" cy="250" r="6" fill="#f0c060"/>
+      <circle cx="130" cy="245" r="4" fill="#d8b4e2"/>
+      <circle cx="190" cy="245" r="4" fill="#d8b4e2"/>
+
+      <!-- mid tier -->
+      <rect x="85" y="155" width="150" height="68" rx="10" fill="#d8b4e2"/>
+      <rect x="85" y="155" width="150" height="18" rx="5" fill="#e8d4f0"/>
+      <!-- frosting drips mid -->
+      <path d="M90,155 Q99,143 108,155 Q117,143 126,155 Q135,143 144,155 Q153,143 162,155 Q171,143 180,155 Q189,143 198,155 Q207,143 216,155 Q225,143 228,155" fill="none" stroke="#f5ecff" stroke-width="7" stroke-linecap="round"/>
+      <!-- dots mid -->
+      <circle cx="120" cy="183" r="5" fill="#f0c060"/>
+      <circle cx="160" cy="188" r="5" fill="#f4a0b5"/>
+      <circle cx="200" cy="183" r="5" fill="#f0c060"/>
+
+      <!-- top tier -->
+      <rect x="110" y="100" width="100" height="58" rx="10" fill="#f0c060"/>
+      <rect x="110" y="100" width="100" height="16" rx="5" fill="#fde89a"/>
+      <!-- frosting drips top -->
+      <path d="M115,100 Q122,90 130,100 Q137,90 145,100 Q152,90 160,100 Q167,90 175,100 Q182,90 190,100 Q197,90 205,100" fill="none" stroke="#fff9e8" stroke-width="6" stroke-linecap="round"/>
+
+      <!-- Candles -->
+      <!-- candle 1 -->
+      <rect x="126" y="65" width="12" height="35" rx="3" fill="#f4a0b5"/>
+      <rect x="126" y="65" width="12" height="8" rx="2" fill="#fce4ec"/>
+      <ellipse cx="132" cy="63" rx="4" ry="2" fill="#fff"/>
+      <!-- wick -->
+      <line x1="132" y1="63" x2="132" y2="58" stroke="#4a2c5a" stroke-width="1.5"/>
+      <!-- flame 1 -->
+      <g class="flame" id="f1">
+        <ellipse cx="132" cy="52" rx="5" ry="9" fill="#f0c060" opacity="0.9"/>
+        <ellipse cx="132" cy="54" rx="3" ry="6" fill="#f4a0b5" opacity="0.8"/>
+        <ellipse cx="132" cy="56" rx="1.5" ry="3" fill="#fff" opacity="0.7"/>
+      </g>
+
+      <!-- candle 2 -->
+      <rect x="148" y="60" width="12" height="40" rx="3" fill="#d8b4e2"/>
+      <rect x="148" y="60" width="12" height="8" rx="2" fill="#e8d4f0"/>
+      <ellipse cx="154" cy="58" rx="4" ry="2" fill="#fff"/>
+      <line x1="154" y1="58" x2="154" y2="52" stroke="#4a2c5a" stroke-width="1.5"/>
+      <g class="flame" id="f2">
+        <ellipse cx="154" cy="46" rx="5" ry="9" fill="#f0c060" opacity="0.9"/>
+        <ellipse cx="154" cy="48" rx="3" ry="6" fill="#e8728e" opacity="0.8"/>
+        <ellipse cx="154" cy="50" rx="1.5" ry="3" fill="#fff" opacity="0.7"/>
+      </g>
+
+      <!-- candle 3 -->
+      <rect x="170" y="65" width="12" height="35" rx="3" fill="#f0c060"/>
+      <rect x="170" y="65" width="12" height="8" rx="2" fill="#fde89a"/>
+      <ellipse cx="176" cy="63" rx="4" ry="2" fill="#fff"/>
+      <line x1="176" y1="63" x2="176" y2="57" stroke="#4a2c5a" stroke-width="1.5"/>
+      <g class="flame" id="f3">
+        <ellipse cx="176" cy="51" rx="5" ry="9" fill="#f0c060" opacity="0.9"/>
+        <ellipse cx="176" cy="53" rx="3" ry="6" fill="#d8b4e2" opacity="0.8"/>
+        <ellipse cx="176" cy="55" rx="1.5" ry="3" fill="#fff" opacity="0.7"/>
+      </g>
+    </svg>
+
+    <button class="blow-btn" onclick="blowCandles()">Blow the Candles 🎂</button>
+    <p class="mic-hint">or use your microphone — just blow!</p>
+  </div>
+</section>
+
+<!-- ══ SECTION 5: CELEBRATION ══ -->
+<section class="section" id="celebration">
+  <img src="image/crystal-amaru.gif" alt="Celebration cat" style="width:150px;height:150px;object-fit:contain;margin-bottom:20px;animation:heartbeat 1.5s ease-in-out infinite">
+  <p class="celebration-message" id="celeb-msg">
+    May your life be filled with happiness, dreams, and love.<br><br>
+    Happy Birthday, my beautiful girl. ❤️
+  </p>
+  <div class="next-btn" onclick="goTo(5)" style="margin-top:50px">
+    <span>One More Surprise</span>
+    <div class="arrow"></div>
+  </div>
+</section>
+
+<!-- ══ SECTION 6: FINAL ══ -->
+<section class="section" id="final">
+  <div class="montage-frame">
+    <div class="montage-slide active" id="m0">
+      <img src="image/lastpic.jpeg" alt="Memory 1">
+    </div>
+    <div class="montage-slide" id="m1">
+      <img src="image/IMG_20261027_000618.jpg.jpeg" alt="Memory 2">
+    </div>
+    <div class="montage-slide" id="m2">
+      <img src="image/IMG-20260822-WA0004.jpg.jpeg" alt="Memory 3">
+    </div>
+    <div class="montage-slide" id="m3">
+      <img src="image/20260610_164942.jpg.jpeg" alt="Memory 4">
+    </div>
+  </div>
+  <p class="final-text">You are my favorite<br>person in the world.</p>
+  <div style="margin-top:30px;font-family:'Dancing Script',cursive;font-size:24px;color:rgba(255,255,255,0.5)">❤️ Forever & Always ❤️</div>
+
+
+
+    <!-- Bottom ticker bar -->
+<div id="ticker">
+  <div class="ticker-track">
+    <span>🎉 Happy Birthday Boudi! 🎂 &nbsp;•&nbsp; Cake khaane ka license aaj se valid hai 🍰 &nbsp;•&nbsp; Dada ko aaj sab maaf, birthday hai! 😂 &nbsp;•&nbsp; Aaj diet cancel, kal se dekhenge 🍕 &nbsp;•&nbsp; Boudi, party kab de rahi ho? 🥳 &nbsp;•&nbsp; Age is just a number, cake is forever 🎂 &nbsp;•&nbsp; Website made with Vishal &nbsp;•&nbsp; </span>
+    <span>🎉 Happy Birthday Boudi! 🎂 &nbsp;•&nbsp; Cake khaane ka license aaj se valid hai 🍰 &nbsp;•&nbsp; Dada ko aaj sab maaf, birthday hai! 😂 &nbsp;•&nbsp; Aaj diet cancel, kal se dekhenge 🍕 &nbsp;•&nbsp; Boudi, party kab de rahi ho? 🥳 &nbsp;•&nbsp; Age is just a number, cake is forever 🎂 &nbsp;•&nbsp; Website made with ❤️ vishal &nbsp;•&nbsp; </span>
+  </div>
+</div>
+</section>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
